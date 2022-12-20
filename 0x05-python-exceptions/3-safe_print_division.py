@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 def safe_print_division(a, b):
-    quotient = None
+    diff = None
     try:
-        quotient = a / b
+        diff = a / b
     except:
-        pass
+        return diff
     finally:
-        if quotient is not None:
-            print("Inside result: {:.1f}".format(quotient))
-        else:
-            print("Inside result: None")
-    return quotient
+        print("Inside result: {}".format(diff))
+        return diff
