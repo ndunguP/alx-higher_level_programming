@@ -1,0 +1,159 @@
+""" The "matrix_divided" module
+
+===============================
+
+
+
+Using "maxtrix_divided"
+
+"""
+
+
+
+"""
+
+Import
+
+"""
+
+
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+
+"""
+
+SUCCESS
+
+"""
+
+
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+
+    >>> matrix_divided([[10, 50], [5, 15], [25, 20]], 5)
+
+    [[2.0, 10.0], [1.0, 3.0], [5.0, 4.0]]
+
+
+
+    >>> matrix_divided([[1]], .5)
+
+    [[2.0]]
+
+
+
+    >>> matrix_divided([[2.0000, 8.0000], [16.0000, 6.0000]], 2)
+
+    [[1.0, 4.0], [8.0, 3.0]]
+
+
+
+    >>> matrix_divided([[]], 3)
+
+    [[]]
+
+
+
+"""
+
+ERRORS
+
+"""
+
+
+
+    """
+
+    Div Not A Number
+
+    """
+
+
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 'n')
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: div must be a number
+
+
+
+    """
+
+    Matrix Element of Wrong Type
+
+    """
+
+
+
+    >>> matrix_divided([[1, 'lll', 3], [4, 'ss', 8.6]], 2)
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+    >>> matrix_divided(None, 2)
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+    """
+
+    Rows of different sizes
+
+    """
+
+
+
+    >>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: Each row of the matrix must have the same size
+
+
+
+    >>> matrix_divided([[6, 8], [7, 6, 9, 4]], 5)
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: Each row of the matrix must have the same size
+
+
+
+    """
+
+    Division by Zero
+
+    """
+
+
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+
+    Traceback (most recent call last):
+
+    ...
+
+    ZeroDivisionError: division by zero

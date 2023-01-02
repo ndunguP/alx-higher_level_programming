@@ -1,0 +1,139 @@
+""" The "matrix_divided" module
+
+===============================
+
+
+
+Using "maxtrix_divided"
+
+"""
+
+
+
+"""
+
+Import
+
+"""
+
+
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+
+"""
+
+SUCCESS
+
+"""
+
+
+
+    >>> numpy.matmul([],[])
+
+    0.0
+
+
+
+    >>> numpy.matmul([2],[5.5])
+
+    11.0
+
+
+
+    >>> numpy.matmul([2.34],[5.545])
+
+    12.975299999999999
+
+
+
+    >>> numpy.matmul([1],[0])
+
+    0
+
+
+
+    >>> numpy.matmul([1],[float('nan')])
+
+    nan
+
+
+
+    >>> numpy.matmul([4],[float('inf')])
+
+    inf
+
+
+
+    >>> numpy.matmul([[4, 3],[3, 5]], [[5, 6], [4, 5]])
+
+array([[32, 39],
+
+       [35, 43]])
+
+
+
+    >>> numpy.matmul([[1, 2], [3, 4]], [[10, 20], [30, 40]])
+
+array([[ 70, 100],
+
+       [150, 220]])
+
+
+
+    >>> numpy.matmul([[1, 2], [3, 4]], [[1.5, 2.99], [3.25, 4.33]])
+
+array([[ 8.  , 11.65],
+
+       [17.5 , 26.29]])
+
+>>> 
+
+
+
+"""
+
+ERRORS
+
+"""
+
+
+
+    >>> numpy.matmul([1, 2],[])
+
+    Traceback (most recent call last):
+
+    ...
+
+    ValueError: shapes (2,) and (0,) not aligned: 2 (dim 0) != 0 (dim 0)
+
+
+
+    >>> numpy.matmul([1], [0])
+
+    Traceback (most recent call last):
+
+    ...
+
+    ValueError: shapes (0,) and (1,) not aligned: 0 (dim 0) != 1 (dim 0)
+
+
+
+    >>> numpy.matmul([1, 2],["hi", "ho"])
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: invalid data type for einsum
+
+
+
+    >>> numpy.matmul(["hey", "no"],["hi", "ho"])
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: Cannot cast scalar from dtype('bool') to dtype('<U3') according to the rule 'safe'

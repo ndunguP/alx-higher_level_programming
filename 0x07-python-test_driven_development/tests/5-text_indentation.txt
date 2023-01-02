@@ -1,0 +1,183 @@
+"""Module for "text_indentation"
+
+===============================
+
+
+
+Using "text_indentation"
+
+"""
+
+
+
+"""
+
+Import
+
+"""
+
+
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+
+"""
+
+SUCCESS
+
+"""
+
+
+
+    >>> text_indentation("Hello darkness my old friend. Something else that rhymes with ten? Python is so cool! Trust me.")
+
+    Hello darkness my old friend.
+
+    <BLANKLINE>
+
+    Something else that rhymes with ten?
+
+    <BLANKLINE>
+
+    Python is so cool! Trust me.
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("")
+
+
+
+    >>> text_indentation("Lorem    ?    \n\n\n")
+
+    Lorem    ?
+
+    <BLANKLINE>
+
+    <BLANKLINE>
+
+    <BLANKLINE>
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("      ")
+
+
+
+    >>> text_indentation("?")
+
+    ?
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation(":")
+
+    :
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation(".")
+
+    .
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("\n.")
+
+    <BLANKLINE>
+
+    .
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("\n")
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("...")
+
+    .
+
+    <BLANKLINE>
+
+    .
+
+    <BLANKLINE>
+
+    .
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("\n ")
+
+    <BLANKLINE>
+
+
+
+    >>> text_indentation("   A   ")
+
+    A
+
+
+
+    >>> text_indentation("\n   hi? hi ")
+
+    <BLANKLINE>
+
+    hi?
+
+    <BLANKLINE>
+
+    hi
+
+
+
+"""
+
+ERROR
+
+"""
+
+
+
+    """
+
+    Incorrect Type
+
+    """
+
+
+
+    >>> text_indentation(8675309)
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: text must be a string
+
+
+
+    >>> text_indentation(None)
+
+    Traceback (most recent call last):
+
+    ...
+
+    TypeError: text must be a string
