@@ -1,63 +1,18 @@
-"""Unittest for max_integer([..])
-
+#!/usr/bin/python3
+"""Module to find the max integer in a list
 """
 
-import unittest
 
-max_integer = __import__('6-max_integer').max_integer
-
-
-
-
-
-class TestMaxInteger(unittest.TestCase):
-
-        """Class for testing max integer of a list"""
-
-            def test_max_integer(self):
-
-                        """Test max integer of a list"""
-
-                                """
-
-                                        SUCCESS
-
-                                                """
-
-                                                        self.assertEqual(max_integer([1, 2, 3, 4, 5]), 5)
-
-                                                                self.assertEqual(max_integer([1, 88, 3, -6, -3]), 88)
-
-                                                                        self.assertEqual(max_integer([-41, -32, -6, -4, -1]), -1)
-
-                                                                                self.assertEqual(max_integer([99, 6, 43]), 99)
-
-                                                                                        self.assertEqual(max_integer([44, 52, 13, 79, 12, 1098, 31]), 1098)
-
-                                                                                                self.assertEqual(max_integer([]), None)
-
-                                                                                                        self.assertEqual(max_integer(["cats", "hi"]), "hi")
-
-                                                                                                                self.assertEqual(max_integer([5]), 5)
-
-
-
-                                                                                                                        """
-
-                                                                                                                                ERROR
-
-                                                                                                                                        """
-
-                                                                                                                                                with self.assertRaises(TypeError):
-
-                                                                                                                                                                max_integer(4)
-
-                                                                                                                                                                        with self.assertRaises(TypeError):
-
-                                                                                                                                                                                        max_integer(["cats", 7])
-
-
-
-                                                                                                                                                                                        if __name__ == "__main__":
-
-                                                                                                                                                                                                unittest.main()
+def max_integer(list=[]):
+    """Function to find and return the max integer in a list of integers
+        If the list is empty, the function returns None
+    """
+    if len(list) == 0:
+        return None
+    result = list[0]
+    i = 1
+    while i < len(list):
+        if list[i] > result:
+            result = list[i]
+        i += 1
+    return result
