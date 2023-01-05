@@ -10,7 +10,7 @@ def text_indentation(text):
     """
     flag = 0
     if type(text) is not str:
-        raise TypeError("text must be a string")
+            raise TypeError("text must be a string")
     textcpy = text.strip(" ")
     for i in textcpy:
         if i == '.' or i == '?' or i == ':':
