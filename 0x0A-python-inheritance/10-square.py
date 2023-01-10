@@ -1,42 +1,13 @@
 #!/usr/bin/python3
-'''
-Class BaseGeometry
-'''
+"""Module for base class base geometry and subclass rectangle"""
+Rectangle = __import__("9-rectangle").Rectangle
 
-
-class BaseGeometry:
-    '''
-    Base class
-    '''
-    def area(self):
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{:s} must be greater than 0".format(name))
-
-class Rectangle(BaseGeometry):
-    '''
-    Rectangle class that inherits from BaseGeometry
-    '''
-    def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
-
-    def area(self):
-        return self.__width * self.__height
-
-    def __str__(self):
-        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
 
 class Square(Rectangle):
-    '''
-    Square class that inherits from Rectangle class
-    '''
+    """Class that inherites from Rectangle.
+    Initializes size"""
     def __init__(self, size):
+        """Initialize size"""
+        self.integer_validator('size', size)
         self.__size = size
-        super().__init__(self.__size, self.__size)
+        super().__init__(size, size)
