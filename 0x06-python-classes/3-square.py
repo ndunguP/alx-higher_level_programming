@@ -1,8 +1,18 @@
 #!/usr/bin/python3
-class Square:
-    """A Square class"""
+'''
+Square class definition
+'''
+
+
+class Square():
+    '''
+    Square class with private attribute size
+    '''
     def __init__(self, size=0):
-        """Initialize a private attribute to size if conditions are met."""
+        '''
+        Args:
+            size: size of the square
+        '''
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -11,5 +21,4 @@ class Square:
             self.__size = size
 
     def area(self):
-        "Public method that calculates and returns the current square area."""
-        return self.__size **2
+        return self.__size * self.__size
