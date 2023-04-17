@@ -66,3 +66,4 @@ class Square(Rectangle):
                           'y': self.y}
 
         return obj_dictionary
+
