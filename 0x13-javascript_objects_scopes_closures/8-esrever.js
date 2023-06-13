@@ -1,1 +1,11 @@
-VimCrypt~03!ûS «fM©irÉGµi&lÖDAMáØÁÇ7÷ç÷æ¢!  )ÎkgğQæ•OIÿÂiË+§0‡33ÿ»Å…!Ö@ĞâxÚ[à+À’«Uû!â	ÌúB´DŒd©‰·T®ØÏfø·Èiòs74ÊİÏÌÌ}¤0_tôp+û…¾¥¿mãã}©øØEV–’MÛwÉœÖÉäã”ú|c0ƒU÷î\%‰ùÜ¶<YØHTÄ°]¯ï²ıæ¢ô„©É³Çº•^¶âe,$bu”}s]¥ç“.âı9Pq~æı‰¯Õ4ä°ÎUWÅ–é×½_ÕµJ’le|(aYTa¦Û> …®³ÆïoÖ!‹áƒN”•TÍ€
+#!/usr/bin/nodes
+/* Function that returns the reversed version of a list */
+exports.esrever = function (list) {
+  let temp;
+  for (let i = 0, j = list.length - 1; i < j; i++, j--) {
+    temp = list[i];
+    list[i] = list[j];
+    list[j] = temp;
+  }
+  return (list);
+};
